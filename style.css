@@ -9,6 +9,37 @@ body {
     font-family: 'Mulish', sans-serif;
 }
 
+.btn-green {
+    border-radius: 25px;
+    font-size: 14px;
+    font-weight: 700;
+    padding: 10px 20px;
+    background: #7abc64;
+    transition: all .3s ease;
+    text-transform: uppercase;
+    color: #fff;
+    border: none;
+}
+
+.btn-green:hover {
+    background: #69aa53;
+}
+
+.btn-blue {
+    border-radius: 25px;
+    font-size: 12px;
+    font-weight: 700;
+    padding: 8px 18px;
+    border: 3px solid #7799ad;
+    transition: all .3s ease;
+    text-transform: uppercase;
+    color: #7799ad;
+}
+
+.btn-blue:hover {
+    border-color: #69aa53;
+    color: #69aa53;
+}
 
 /* contacts */
 .contacts {
@@ -291,20 +322,6 @@ header a:hover span {
     color: #929aa3;
 }
 
-.contacts-collections .contact-form button {
-    border-radius: 25px;
-    font-size: 14px;
-    font-weight: 700;
-    padding: 10px 20px;
-    background: #7abc64;
-    transition: all .3s ease;
-    border: none;
-}
-
-.contacts-collections .contact-form button:hover {
-    background: #69aa53;
-}
-
 /* call-to-action */
 section.call-to-action {
     background-image: url('img/horizontal-cta-background.jpg');
@@ -370,4 +387,73 @@ section.call-to-action span:first-of-type {
 .scroll-top a span {
     display: block;
     line-height: 35px;
+}
+
+/* service offers */
+.service-offers {
+    background-image: url('img/promise-background.jpg');
+    background-size: cover;
+    padding: 80px 50px;
+}
+
+.service-offers .courses {
+    box-shadow: rgba(61, 61, 61, 0.27) 0px 25px 20px 0px;
+    padding: 50px 30px;
+    border-radius: 10px;
+    background-color: #fff;
+    position: relative;
+    bottom: 110px;
+    overflow: hidden;
+}
+
+.service-offers .courses::after {
+    content: 'new';
+    position: absolute;
+    display: block;
+    width: 120px;
+    height: 70px;
+    line-height: 100px;
+    left: -42px;
+    top: -18px;
+    background: #7abc64;
+    text-transform: uppercase;
+    color: #fff;
+    font-weight: 700;
+    transform: rotateZ(-45deg);
+}
+
+.service-offers .courses h2 {
+    font-size: 40px;
+    color: #494c4e;
+    margin-bottom: 50px;
+    font-weight: 700;
+}
+
+.service-offers .courses p {
+    font-size: 16px;
+    color: #929aa3;
+    line-height: 2;
+    margin-bottom: 50px;
+}
+
+.service-offers img {
+    max-width: 100%;
+    transition: all 1s ease;
+}
+
+.service-offers .services img:hover  {
+    transform: scale(1.15);
+}
+
+.service-offers .services > div {
+    padding: 15px;
+    color: #7799ad;
+}
+
+.service-offers .services > div > div {
+    overflow: hidden;
+}
+
+.service-offers .services h4 {
+    margin: 15px 0;
 }
