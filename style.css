@@ -1,3 +1,4 @@
+/* general */
 * {
     margin: 0;
     padding: 0;
@@ -6,4 +7,367 @@
 
 body {
     font-family: 'Mulish', sans-serif;
+}
+
+
+/* contacts */
+.contacts {
+    background-color: #353637;
+    height: 44px;
+    color: #929aa3;
+    font-size: 12px;
+}
+
+.contacts span {
+    line-height: 44px;
+}
+
+
+/* header */
+header {
+    background-color: rgba(53,54,55,0.5);
+    position: sticky;
+    width: 100%;
+    left: 0;
+    top: 0;
+    z-index: 1;
+    transition: all .3s ease;
+}
+
+header.active {
+    background-color: rgb(53,54,55);
+}
+
+header .logo {
+    max-width: 250px;
+}
+
+header .row {
+    height: 115px;
+    transition: all .3s ease;
+}
+
+header .row.active {
+    height: 65px;
+    background-color: rgba(53,54,55,0.9);
+}
+
+header ul {
+    margin: 0;
+}
+
+header ul li {
+    line-height: 44px;
+    cursor: pointer;
+    position: relative;
+}
+
+header ul li::after {
+    content: '';
+    display: block;
+    position: absolute;
+    opacity: 0;
+    left: 50%;
+    transform: translate(-50%, 0);
+    bottom: 0;
+    width: 0;
+    height: 2px;
+    background-color: #7abc64;
+    transition: all .3s ease;
+}
+
+header ul li:hover::after {
+    content: '';
+    opacity: 1;
+    bottom: 0;
+    width: 100%;
+}
+
+header ul li span {
+    font-size: 9px;
+    background-color: #7abc64;
+    padding: 5px 6px;
+    border-radius: 4px;
+    margin-left: 7px;
+    font-weight: 800;
+    line-height: 10px;
+}
+
+header .call-to-action a {
+    background-color: #7abc64;
+    padding: 10px 20px;
+    width: 200px;
+    border-radius: 22px;
+    border: 2px solid transparent;
+    text-align: center;
+    width: 140px;
+    display: block;
+}
+
+header .call-to-action a:hover {
+    background-color: transparent;
+    border: 2px solid #7abc64;
+    color: #7abc64;
+}
+
+header a {
+    color: #fff;
+    font-size: 14px;
+    text-transform: uppercase;
+    font-weight: 700;
+    transition: all .3s ease;
+    display: flex;
+    align-items: center;
+}
+
+header a:hover {
+    text-decoration: none;
+    color: #7abc64;
+}
+
+header a:hover span {
+    color: #fff;
+}
+
+
+/* hero */
+.hero {
+    height: 720px;
+    background-image: url('img/homepage-hero-background.jpg');
+    background-size: cover;
+    background-position: center;
+    margin-top: -115px;
+}
+
+.hero div {
+    height: 100%;
+    color: #fff;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.hero h1 {
+    font-size: 60px;
+    font-weight: 700;
+}
+
+.hero h2 {
+    font-size: 26px;
+    font-weight: 500;
+}
+
+/* extras */
+.extras {
+    position: fixed;
+    top: 150px;
+    right: 15px;
+    z-index: 2;
+}
+
+.extras > div {
+    width: 65px;
+    height: 65px;
+    background-color: #fff;
+    border-radius: 5px;
+    margin-bottom: 10px;
+    box-shadow: 0 10px 20px 5px rgba(0,0,0,.15);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.extras div span {
+    font-size: 12px;
+    font-weight: 700;
+}
+
+.extras svg {
+    fill: #33475b;
+    height: 100%;
+}
+
+.extras .top-element, .extras .bottom-element {
+    overflow: hidden;
+}
+
+.extras .top-element > div, .extras .bottom-element > div {
+    width: 100px;
+    height: 36px;
+    display: flex;
+    justify-content: space-between;
+    position: relative;
+    left: 50%;
+    transition: all .3s ease;
+    cursor: pointer;
+}
+
+.extras .top-element > div:hover, .extras .bottom-element > div:hover {
+    left: -50%;
+}
+
+.extras .bottom-element div > span:first-of-type {
+    font-size: 28px;
+    font-weight: 700;
+    color: #7abc64;
+    padding-left: 2px;
+    position: relative;
+}
+
+.extras .bottom-element div span:first-of-type::before {
+    content: '$';
+    display: block;
+    position: absolute;
+    top: 4px;
+    left: -12px;
+    padding-left: 4px;
+    font-size: 16px;
+    font-weight: 700;
+    line-height: 16px;
+}
+
+.extras .description {
+    font-family: 'Open Sans', sans-serif;
+    margin-top: 5px;
+    font-weight: 700;
+}
+
+/* contacts-collections */
+.contacts-collections {
+    padding-top: 80px;
+    margin-top: 0px;
+    padding-right: 30px;
+    margin-bottom: 0px;
+    padding-left: 30px;
+}
+
+.contacts-collections .description h2 {
+    font-size: 40px;
+    color: #494c4e;
+    margin-bottom: 31px;
+}
+
+.contacts-collections .description p {
+    color: #929aa3;
+    font-size: 21px;
+    line-height: 2;
+    font-weight: 300;
+}
+
+.contacts-collections .description p:last-of-type {
+    font-size: 16px;
+}
+
+.contacts-collections .contact-form > div {
+    border-radius: 10px;
+    padding: 40px;
+    background-color: #fff;
+    box-shadow: rgba(61, 61, 61, 0.1) 0px 25px 20px 0px;
+    position: relative;
+    top: -110px;
+}
+
+.contacts-collections .contact-form h3 {
+    font-size: 30px;
+    color: #7abc64;
+    margin-bottom: 40px;
+}
+
+.contacts-collections .contact-form p {
+    font-size: 16px;
+    color: #929aa3;
+    margin-bottom: 40px;
+}
+
+.contacts-collections .contact-form input {
+    margin-bottom: 28px;
+    height: 50px;
+    background-color: #f7f7f7;
+}
+
+.contacts-collections .contact-form input::placeholder {
+    font-size: 12px;
+    color: #929aa3;
+}
+
+.contacts-collections .contact-form button {
+    border-radius: 25px;
+    font-size: 14px;
+    font-weight: 700;
+    padding: 10px 20px;
+    background: #7abc64;
+    transition: all .3s ease;
+    border: none;
+}
+
+.contacts-collections .contact-form button:hover {
+    background: #69aa53;
+}
+
+/* call-to-action */
+section.call-to-action {
+    background-image: url('img/horizontal-cta-background.jpg');
+    background-size: cover;
+    padding: 60px 0px;
+    color: #fff;
+}
+
+section.call-to-action h2 {
+    font-size: 40px;
+    line-height: 1.5;
+    font-weight: 700;
+}
+
+section.call-to-action h3 {
+    font-size: 21px;
+    line-height: 1.5;
+    font-weight: 700;
+}
+
+section.call-to-action span {
+    font-size: 30px;
+    line-height: 1.5;
+    font-weight: 400;
+    display: inline-block;
+}
+
+section.call-to-action span:first-of-type {
+    margin-right: 20px;
+    font-weight: 700;
+}
+
+/* scroll top */
+.scroll-top {
+    width: 48px;
+    height: 35px;
+    opacity: 0;
+    background-color: #333;
+    border-radius: 4px 4px 0 0;
+    position: fixed;
+    right: 75px;
+    bottom: 0;
+    text-align: center;
+    transition: all .3s ease;
+}
+
+.scroll-top.active {
+    opacity: .9;
+}
+
+.scroll-top:hover {
+    background-color: #7abc64;
+}
+
+.scroll-top a {
+    font-size: 20px;
+    color: #fff;
+    text-decoration: none;
+    display: block;
+    width: 100%;
+}
+
+.scroll-top a span {
+    display: block;
+    line-height: 35px;
 }
