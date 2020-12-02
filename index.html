@@ -122,10 +122,12 @@
                     <!-- service offers -->
                     <div class="container">
                         <div class="row text-center">
-                            <div class="col-lg-5 courses">
-                                <h2>Courses</h2>
-                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc ultrices auctor sapien id cursus. Aliquam maximus turpis in vehicula semper.</p>
-                                <button class="btn-green">Course information</button>
+                            <div class="col-lg-5">
+                                <div class="courses">
+                                    <h2>Courses</h2>
+                                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc ultrices auctor sapien id cursus. Aliquam maximus turpis in vehicula semper.</p>
+                                    <button class="btn-green">Course information</button>
+                                </div>
                             </div>
                             <div class="col-lg-7">
                                 <div class="row services">
@@ -157,34 +159,206 @@
                     </div>
                 </section>
 
-                <section>
+                <section class="pad-section"></section>
+
+                <section class="social-proof">
                     <!-- social-proof -->
+                    <div class="container">
+                        <div class="row no-gutters">
+                            <div class="col-lg-4">
+                                <div class="card-container">
+                                    <div class="card text-center">
+                                        <div class="chart-container">
+                                            <canvas id="chart_pass"></canvas>
+                                        </div>
+                                        <p>Pass Rate</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-lg-4">
+                                <div class="card-container">
+                                    <div class="card text-center">
+                                        <div class="chart-container">
+                                            <canvas id="chart_rate"></canvas>
+                                        </div>
+                                        <p>Referral Rate</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-lg-4">
+                                <div class="card-container">
+                                    <div class="card text-center">
+                                        <div class="chart-container">
+                                            <canvas id="chart_accident"></canvas>
+                                        </div>
+                                        <p>Accident Rate</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </section>
 
-                <section>
-                    <!-- school more info -->
+                <section class="instructors">
+                    <!-- instructors -->
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-lg-8">
+                                <h2>Your Instructors</h2>
+                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc ultrices auctor sapien id cursus. Aliquam maximus turpis in vehicula semper.</p>
+                            </div>
+                            <div class="col-lg-4 align-self-center">
+                                <button class="btn-green">More about us</button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="container">
+                        <div class="row no-gutters">
+                            <div class="col-lg-4">
+                                <div class="instructor-container">
+                                    <div class="instructor text-center">
+                                        <img src="img/instructor-mikehart.jpg" alt="mikehart">
+                                        <h3>Mike Hart</h3>
+                                        <div class="social">
+                                            <a href="#"><span class="fab fa-facebook-f"></span></a>
+                                            <a href="#"><span class="fab fa-twitter"></span></a>
+                                            <a href="#"><span class="fab fa-instagram"></span></a>
+                                        </div>
+                                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-lg-4">
+                                <div class="instructor-container">
+                                    <div class="instructor text-center">
+                                        <img src="img/instructor-johnsmith.jpg" alt="johnsmith">
+                                        <h3>John Smith</h3>
+                                        <div class="social">
+                                            <a href="#"><span class="fab fa-facebook-f"></span></a>
+                                            <a href="#"><span class="fab fa-twitter"></span></a>
+                                            <a href="#"><span class="fab fa-instagram"></span></a>
+                                        </div>
+                                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-lg-4">
+                                <div class="instructor-container">
+                                    <div class="instructor text-center">
+                                        <img src="img/instructor-angelahart.jpg" alt="angelahart">
+                                        <h3>Angela Hart</h3>
+                                        <div class="social">
+                                            <a href="#"><span class="fab fa-facebook-f"></span></a>
+                                            <a href="#"><span class="fab fa-twitter"></span></a>
+                                            <a href="#"><span class="fab fa-instagram"></span></a>
+                                        </div>
+                                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </section>
 
-                <section>
+                <section class="testimonials">
                     <!-- testimonials -->
+                    <div class="container">
+                        <div class="row text-center">
+
+                            <div class="col-lg-8 offset-lg-2">
+                                <h2>Testimonials</h2>
+                                <p>Here’s what our happy drivers had to say about our services:</p>
+                                <img :src="'img/testimonial-' + getTestimnonialName() + '.png'" alt="testimonials">
+                                <p>Avada Driving School really helped build my confidence behind the wheel and with driving in general, and they got me a first time pass! Highly recommended.</p>
+                                <span class="text-capitalize">{{ testimonials[testimonialActive] }}</span>
+                                <div>
+                                    <span class="markers" v-for="i in 5" :class="i == (testimonialActive + 1) ? 'active' : ''" @click="getTestimonialMarker(i)"></span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </section>
 
-                <section>
+                <section class="latest_news">
                     <!-- Latest News -->
+                    <div class="container">
+                        <h2 class="text-center">Latest News</h2>
+                        <div class="row">
+                            <div class="col-lg-12">
+                                <div class="row">
+                                    <div class="col-lg-6">
+
+                                    </div>
+                                    <div class="col-lg-6">
+
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </section>
 
-                <section>
+                <section class="newsletter">
                     <!-- Newsletter subscription -->
+                    <div class="container">
+                        <div class="row text text-center">
+                            <div class="col-lg-8 offset-lg-2">
+                                <h2>Sign up to our Newsletter</h2>
+                                <form class="form-group">
+                                    <input type="email" name="email">
+                                    <button type="submit" class="btn-green">Subscribe</button>
+                                </form>
+                                <p>(We do not share your data with anybody, and only use it for its intended purpose)</p>
+                            </div>
+                        </div>
+                    </div>
                 </section>
             </main>
 
             <footer>
-                <section>
-                    <!-- footer -->
+                <!-- footer -->
+                <section class="contacts-details">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-lg-3">
+                                <img class="logo" :src="headerLogo" alt="avada logo">
+                                <p>Avada Driving School is the right choice for experienced drivers looking for a refresher course, or the brand new driver wanting to pass first time.</p>
+                            </div>
+                            <div class="col-lg-3">
+
+                            </div>
+                            <div class="col-lg-3">
+
+                            </div>
+                            <div class="col-lg-3">
+
+                            </div>
+                        </div>
+                    </div>
                 </section>
 
-                <section>
+                <section class="credits">
                     <!-- credits -->
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-lg-10">
+                                <p>© Copyright 2012 - 2020 | Avada Theme by
+                                    <a class="external-ref" href="#">ThemeFusion</a>
+                                    | All Rights Reserved | Powered by
+                                    <a class="external-ref" href="#">WordPress</a>
+                                </p>
+                            </div>
+                            <div class="col-lg-2">
+                                <div class="social">
+                                    <a href="#"><span class="fab fa-facebook-f"></span></a>
+                                    <a href="#"><span class="fab fa-twitter"></span></a>
+                                    <a href="#"><span class="fab fa-youtube"></span></a>
+                                    <a href="#"><span class="fab fa-instagram"></span></a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </section>
             </footer>
 
@@ -216,7 +390,7 @@
                 <a href="#"><span class="fas fa-angle-up"></span></a>
             </div>
         </div>
-
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.min.js"></script>
         <script src="main.js" charset="utf-8"></script>
     </body>
 </html>
