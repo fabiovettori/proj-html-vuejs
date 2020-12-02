@@ -320,19 +320,43 @@
                 <!-- footer -->
                 <section class="contacts-details">
                     <div class="container">
-                        <div class="row">
+                        <div class="row align-items-center">
                             <div class="col-lg-3">
                                 <img class="logo" :src="headerLogo" alt="avada logo">
                                 <p>Avada Driving School is the right choice for experienced drivers looking for a refresher course, or the brand new driver wanting to pass first time.</p>
                             </div>
                             <div class="col-lg-3">
-
+                                <h3 class="text-uppercase">contats details</h3>
+                                <ul class="list-group list-unstyled">
+                                    <li>
+                                        <span class="fas fa-home"></span>
+                                        12345 North Main Street, New York, NY 555555
+                                    </li>
+                                    <li>
+                                        <span class="fas fa-phone"></span>
+                                        1.800.555.6789
+                                    </li>
+                                    <li>
+                                        <span class="fas fa-envelope"></span>
+                                        info@your-domain.com
+                                    </li>
+                                    <li>
+                                        <span class="fas fa-link"></span>
+                                        Theme-Fusion.com
+                                    </li>
+                                </ul>
                             </div>
                             <div class="col-lg-3">
-
+                                <h3 class="text-uppercase">contats details</h3>
+                                <ul class="list-group list-unstyled">
+                                    <li v-for="link in footerLinks">
+                                        <span class="far fa-arrow-alt-circle-right icon-green"></span>
+                                        <a href="#">{{ link }}</a>
+                                    </li>
+                                </ul>
                             </div>
                             <div class="col-lg-3">
-
+                                <button class="btn-green">{{ headerButton }}</button>
                             </div>
                         </div>
                     </div>

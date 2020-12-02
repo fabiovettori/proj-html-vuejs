@@ -731,6 +731,40 @@ section.call-to-action span:first-of-type {
     margin-bottom: 20px;
 }
 
+.contacts-details h3 {
+    font-size: 16px;
+    font-weight: 700;
+    color: #fff;
+}
+
+.contacts-details ul li {
+    color: #929aa3;
+    font-size: 13px;
+    margin: 10px 0;
+}
+
+.contacts-details span {
+    color: #bbcbd3;
+    font-size: 17px;
+    margin-right: 10px;
+}
+
+.contacts-details a {
+    font-size: 17px;
+    font-weight: 400;
+    color: #7abc64;
+    transition: all .2s ease;
+}
+
+.contacts-details li .icon-green {
+    color: #7abc64;
+}
+
+.contacts-details a:hover {
+    text-decoration: none;
+    color: #9eeb85;
+}
+
 .credits {
     background-color: #1c1d1e;
     padding: 30px 0;

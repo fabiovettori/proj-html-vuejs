@@ -13,7 +13,8 @@ var app = new Vue({
         scrollToTop: false,
         // testimonials carousel
         testimonials: ['sophia jones', 'harold green', 'grant harvey', 'kate lewis', 'kelly johnson'],
-        testimonialActive: 0
+        testimonialActive: 0,
+        footerLinks: ['Pass Plus', 'Intensive Course', 'Automatic', 'Instructor Training']
     },
     mounted: function(){
         this.scrollListener(),
