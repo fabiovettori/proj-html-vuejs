@@ -1,0 +1,471 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+    <head>
+        <!-- site info -->
+        <meta charset="utf-8">
+        <title>Driving &#8211; Avada Website Builder For WordPress &#038; WooCommerce</title>
+        <meta name="description" content="Drive with Avada We offer the finest driving tuition money can buy. Get Behind The Wheel">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+        <!-- icons -->
+        <script src="https://kit.fontawesome.com/efa78a0868.js"></script>
+
+        <!-- fonts -->
+        <link rel="preconnect" href="https://fonts.gstatic.com">
+        <link href="https://fonts.googleapis.com/css2?family=Mulish:ital,wght@0,200;0,300;0,400;0,500;0,700;1,300&family=Open+Sans:ital,wght@0,400;0,700;1,300&display=swap" rel="stylesheet">
+
+        <!-- css -->
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css">
+        <link rel="stylesheet" href="style.css">
+
+        <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
+    </head>
+    <body>
+        <div id="root">
+            <section class="contacts">
+                <!-- contacts -->
+                <div class="container-lg">
+                    <div class="row">
+                        <div class="col-lg-6">
+                            <span>We have a 95% Successful Pass Rate!</span>
+                        </div>
+                        <div class="col-lg-6 text-right">
+                            <span>
+                                <i class="glyphicon fa-phone fas"></i>
+                                Give us a call to book your tuition! 1-800-555-555
+                            </span>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <header :class="headerToggle ? 'active' : ''">
+                <!-- header -->
+                <div class="container-lg">
+                    <div class="row align-items-center" :class="headerToggle ? 'active' : ''">
+                        <div class="col-lg-4">
+                            <a href="#"><img class="logo" :src="headerLogo" alt="avada logo"></a>
+                        </div>
+                        <ul class="col-lg-6 d-flex justify-content-between align-middle">
+                            <li v-for="(link, i) in headerLinks" class="list-unstyled">
+                                <a href="#">{{ link }}
+                                    <span v-if="i == 3">{{ badge }}</span>
+                                </a>
+                            </li>
+                        </ul>
+                        <div class="col-lg-2 call-to-action">
+                            <a href="#" @mouseenter="headerButton = 'learn more'" @mouseleave="headerButton = 'book now'">{{ headerButton }}</a>
+                        </div>
+                    </div>
+                </div>
+            </header>
+
+            <section class="hero">
+                <!-- hero -->
+                <div class="container-lg">
+                    <div class="row">
+                        <div class="col-lg-12">
+                            <h1>Drive with Avada</h1>
+                            <h2>We offer the finest driving tuition money can buy</h2>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <main>
+                <section class="contacts-collections">
+                    <!-- contacts-collections -->
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-lg-6 description">
+                                <h2>Get Behind The Wheel</h2>
+                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc ultrices auctor sapien id cursus. Aliquam maximus turpis in vehicula semper.</p>
+                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc ultrices auctor sapien id cursus. Aliquam maximus turpis in vehicula semper. Fusce et ultrices libero, at suscipit lacus. Sed vitae fringilla nibh. Nunc ultrices auctor sapien id cursus. Aliquam maximus turpis in vehicula semper. Fusce et ultrices libero, at suscipit lacus. Sed vitae fringilla nibh.</p>
+                            </div>
+                            <div class="col-lg-6 contact-form">
+                                <div class="text-center">
+                                    <h3>First Lesson Free!</h3>
+                                    <p>When you make a block booking with us your first lesson is included free.</p>
+                                    <form class="form-group" action="index.html" method="post">
+                                        <input type="text" class="form-control" name="name" placeholder="Your Name" minlength="5">
+                                        <input type="email" class="form-control" name="email" placeholder="Email" minlength="5">
+                                        <input type="text" class="form-control" name="phone" placeholder="Telephone" minlength="5">
+                                        <input type="text" class="form-control" name="location" placeholder="Location" minlength="5">
+                                        <button type="submit" class="btn-green" name="button">request a callback</button>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <section class="call-to-action">
+                    <!-- call to action -->
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-lg-8">
+                                <h2>Start Learning to Drive Today</h2>
+                                <h3>Give us a call to schedule your first driving lesson</h3>
+                            </div>
+                            <div class="col-lg-4 d-flex align-items-center">
+                                <span class="fusion-li-icon fa-phone fas"></span>
+                                <span>1-800-555-555</span>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <section class="service-offers">
+                    <!-- service offers -->
+                    <div class="container">
+                        <div class="row text-center">
+                            <div class="col-lg-5">
+                                <div class="courses">
+                                    <h2>Courses</h2>
+                                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc ultrices auctor sapien id cursus. Aliquam maximus turpis in vehicula semper.</p>
+                                    <button class="btn-green">Course information</button>
+                                </div>
+                            </div>
+                            <div class="col-lg-7">
+                                <div class="row services">
+                                    <div class="col-lg-4">
+                                        <div>
+                                            <img src="img/courses-passplus.jpg" alt="courses-passplus">
+                                        </div>
+                                        <h4>Pass Plus</h4>
+                                        <button class="btn-blue">Learn More</button>
+                                    </div>
+                                    <div class="col-lg-4">
+                                        <div>
+                                            <img src="img/course-intensive.jpg" alt="course-intensive">
+                                        </div>
+                                        <h4>Intensive Course</h4>
+                                        <button class="btn-blue">Learn More</button>
+                                    </div>
+                                    <div class="col-lg-4">
+                                        <div>
+                                            <img src="img/courses-instructor.jpg" alt="courses-instructor">
+                                        </div>
+                                        <h4>Instructors</h4>
+                                        <button class="btn-blue">Learn More</button>
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <section class="pad-section"></section>
+
+                <section class="social-proof">
+                    <!-- social-proof -->
+                    <div class="container">
+                        <div class="row no-gutters">
+                            <div class="col-lg-4">
+                                <div class="card-container">
+                                    <div class="card text-center">
+                                        <div class="chart-container">
+                                            <canvas id="chart_pass"></canvas>
+                                        </div>
+                                        <p>Pass Rate</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-lg-4">
+                                <div class="card-container">
+                                    <div class="card text-center">
+                                        <div class="chart-container">
+                                            <canvas id="chart_rate"></canvas>
+                                        </div>
+                                        <p>Referral Rate</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-lg-4">
+                                <div class="card-container">
+                                    <div class="card text-center">
+                                        <div class="chart-container">
+                                            <canvas id="chart_accident"></canvas>
+                                        </div>
+                                        <p>Accident Rate</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <section class="instructors">
+                    <!-- instructors -->
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-lg-8">
+                                <h2>Your Instructors</h2>
+                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc ultrices auctor sapien id cursus. Aliquam maximus turpis in vehicula semper.</p>
+                            </div>
+                            <div class="col-lg-4 align-self-center">
+                                <button class="btn-green">More about us</button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="container">
+                        <div class="row no-gutters">
+                            <div class="col-lg-4">
+                                <div class="instructor-container">
+                                    <div class="instructor text-center">
+                                        <div>
+                                            <img src="img/instructor-mikehart.jpg" alt="mikehart">
+                                            <div class="tooltip">
+                                                instructor-mikehart
+                                            </div>
+                                        </div>
+                                        <h3>Mike Hart</h3>
+                                        <div class="social">
+                                            <a href="#"><span class="fab fa-facebook-f"></span></a>
+                                            <a href="#"><span class="fab fa-twitter"></span></a>
+                                            <a href="#"><span class="fab fa-instagram"></span></a>
+                                        </div>
+                                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-lg-4">
+                                <div class="instructor-container">
+                                    <div class="instructor text-center">
+                                        <div>
+                                            <img src="img/instructor-johnsmith.jpg" alt="johnsmith">
+                                            <div class="tooltip">
+                                                instructor-johnsmith
+                                            </div>
+                                        </div>
+                                        <h3>John Smith</h3>
+                                        <div class="social">
+                                            <a href="#"><span class="fab fa-facebook-f"></span></a>
+                                            <a href="#"><span class="fab fa-twitter"></span></a>
+                                            <a href="#"><span class="fab fa-instagram"></span></a>
+                                        </div>
+                                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-lg-4">
+                                <div class="instructor-container">
+                                    <div class="instructor text-center">
+                                        <div>
+                                            <img src="img/instructor-angelahart.jpg" alt="angelahart">
+                                            <div class="tooltip">
+                                                instructor-angelahart
+                                            </div>
+                                        </div>
+                                        <h3>Angela Hart</h3>
+                                        <div class="social">
+                                            <a href="#"><span class="fab fa-facebook-f"></span></a>
+                                            <a href="#"><span class="fab fa-twitter"></span></a>
+                                            <a href="#"><span class="fab fa-instagram"></span></a>
+                                        </div>
+                                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <section class="testimonials">
+                    <!-- testimonials -->
+                    <div class="container">
+                        <div class="row text-center">
+
+                            <div class="col-lg-8 offset-lg-2">
+                                <h2>Testimonials</h2>
+                                <p>Here’s what our happy drivers had to say about our services:</p>
+                                <img :src="'img/testimonial-' + getTestimnonialName() + '.png'" alt="testimonials">
+                                <p>Avada Driving School really helped build my confidence behind the wheel and with driving in general, and they got me a first time pass! Highly recommended.</p>
+                                <span class="text-capitalize">{{ testimonials[testimonialActive] }}</span>
+                                <div>
+                                    <span class="markers" v-for="i in 5" :class="i == (testimonialActive + 1) ? 'active' : ''" @click="getTestimonialMarker(i)"></span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <section class="latest_news">
+                    <!-- Latest News -->
+                    <div class="container">
+                        <div class="row background">
+                            <div class="col-lg-12">
+                                <div class="row foreground">
+                                    <div class="col-lg-12">
+                                        <h2 class="text-center">Latest News</h2>
+                                    </div>
+                                    <div class="col-lg-12">
+                                        <div class="row section_cards">
+                                            <div class="col-lg-6">
+                                                <div class="card-news text-center">
+                                                    <div class="preview-service">
+                                                        <a href="#"><img src="img/blog-choosecar-700x441.jpg" alt="blog-choosecar"></a>
+                                                    </div>
+                                                    <a href="#">What Car to Start With?</a>
+                                                    <p>February 7th, 2019
+                                                        <span class="divider"></span>
+                                                        <a href="#">0 Comments</a>
+                                                    </p>
+                                                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing</p>
+                                                </div>
+                                            </div>
+                                            <div class="col-lg-6">
+                                                <div class="card-news text-center">
+                                                    <div class="preview-service">
+                                                        <a href="#"><img src="img/blogpost-10and2-700x441.jpg" alt="blog-choosecar"></a>
+                                                    </div>
+                                                    <a href="#">What Car to Start With?</a>
+                                                    <p>February 7th, 2019
+                                                        <span class="divider"></span>
+                                                        <a href="#">0 Comments</a>
+                                                    </p>
+                                                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing</p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-12 text-center cta-section">
+                                        <button class="btn-green">More from the blog</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-lg-12">
+                                <div class="row buffle">
+                                    <div class="col-lg-12">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <section class="newsletter">
+                    <!-- Newsletter subscription -->
+                    <div class="container">
+                        <div class="row text text-center">
+                            <div class="col-lg-8 offset-lg-2">
+                                <h2>Sign up to our Newsletter</h2>
+                                <form class="form-group">
+                                    <input type="email" name="email">
+                                    <button type="submit" class="btn-green">Subscribe</button>
+                                </form>
+                                <p>(We do not share your data with anybody, and only use it for its intended purpose)</p>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+            </main>
+
+            <footer>
+                <!-- footer -->
+                <section class="contacts-details">
+                    <div class="container">
+                        <div class="row align-items-center">
+                            <div class="col-lg-3">
+                                <a href="#"><img class="logo" :src="headerLogo" alt="avada logo"></a>
+                                <p>Avada Driving School is the right choice for experienced drivers looking for a refresher course, or the brand new driver wanting to pass first time.</p>
+                            </div>
+                            <div class="col-lg-3">
+                                <h3 class="text-uppercase">contats details</h3>
+                                <ul class="list-group list-unstyled">
+                                    <li class="d-flex">
+                                        <span class="fas fa-home"></span>
+                                        12345 North Main Street, New York, NY 555555
+                                    </li>
+                                    <li>
+                                        <span class="fas fa-phone"></span>
+                                        1.800.555.6789
+                                    </li>
+                                    <li>
+                                        <span class="fas fa-envelope"></span>
+                                        info@your-domain.com
+                                    </li>
+                                    <li>
+                                        <span class="fas fa-link"></span>
+                                        Theme-Fusion.com
+                                    </li>
+                                </ul>
+                            </div>
+                            <div class="col-lg-3 align-self-start">
+                                <h3 class="text-uppercase">courses</h3>
+                                <ul class="list-group list-unstyled">
+                                    <li v-for="link in footerLinks" class="courses">
+                                        <span class="far fa-arrow-alt-circle-right icon-green"></span>
+                                        <a href="#">{{ link }}</a>
+                                    </li>
+                                </ul>
+                            </div>
+                            <div class="col-lg-3 text-center">
+                                <button class="btn-green" @mouseenter="footerButton = 'learn more'" @mouseleave="footerButton = 'book now'">{{ footerButton }}</button>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <section class="credits">
+                    <!-- credits -->
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-lg-10">
+                                <p>© Copyright 2012 - 2020 | Avada Theme by
+                                    <a class="external-ref" href="#">ThemeFusion</a>
+                                    | All Rights Reserved | Powered by
+                                    <a class="external-ref" href="#">WordPress</a>
+                                </p>
+                            </div>
+                            <div class="col-lg-2">
+                                <div class="social">
+                                    <a href="#"><span class="fab fa-facebook-f"></span></a>
+                                    <a href="#"><span class="fab fa-twitter"></span></a>
+                                    <a href="#"><span class="fab fa-youtube"></span></a>
+                                    <a href="#"><span class="fab fa-instagram"></span></a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+            </footer>
+
+            <div class="extras">
+                <div class="top-element">
+                    <div>
+                        <svg v-for="i in 2" class="fss-before" width="36" height="36" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M26 5.99994H6C5.44772 5.99994 5 6.44765 5 6.99994C5 7.55222 5.44772 7.99994 6 7.99994H26C26.5523 7.99994 27 7.55222 27 6.99994C27 6.44765 26.5523 5.99994 26 5.99994Z"></path>
+                            <path d="M24 2.99994H8C7.44772 2.99994 7 3.44765 7 3.99994C7 4.55222 7.44772 4.99994 8 4.99994H24C24.5523 4.99994 25 4.55222 25 3.99994C25 3.44765 24.5523 2.99994 24 2.99994Z"></path>
+                            <path fill-rule="evenodd" clip-rule="evenodd" d="M3 12.9999C3 10.7908 4.79086 8.99994 7 8.99994H25C27.2091 8.99994 29 10.7908 29 12.9999V24.9999C29 27.2091 27.2091 28.9999 25 28.9999H7C4.79086 28.9999 3 27.2091 3 24.9999V12.9999ZM11.2142 23.9962C11.0575 23.9962 10.9524 23.8414 11.0218 23.7026L15.8007 14.1131C15.8761 13.9623 16.0883 13.9623 16.1637 14.1131L16.5247 14.8371C18.9529 19.7192 15.6459 24.0041 11.2142 23.9962ZM18.3797 19.2906C18.4531 19.1399 18.6674 19.1399 18.7428 19.2906L20.9785 23.7065C21.0459 23.8414 20.9467 24.0001 20.796 24.0001H18.8578C17.4335 24.0001 16.6896 22.6194 17.2807 21.4371L18.3797 19.2906Z"></path>
+                        </svg>
+                    </div>
+                    <span class="description">Demos</span>
+                </div>
+                <div class="bottom-element">
+                    <div>
+                        <span>39</span>
+                        <svg class="fss-after" width="36" height="36" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M4 5C3.44771 5 3 5.44772 3 6C3 6.55229 3.44771 7 4 7H5.87206C6.12652 7 6.26222 7.00066 6.36001 7.00804L6.36992 7.00882L6.37239 7.01846C6.39629 7.11357 6.42003 7.24719 6.46332 7.49793L7.88104 15.71C7.96479 16.1952 8.03734 16.6155 8.12495 16.9588C8.21776 17.3224 8.34534 17.6775 8.57914 18.0049C8.92972 18.496 9.4202 18.8699 9.98655 19.0778C10.3642 19.2165 10.7405 19.2454 11.1157 19.2386C11.4699 19.2322 11.8944 19.1908 12.3844 19.143L23.2436 18.0843L23.2436 18.0843C23.7231 18.0376 24.139 17.9971 24.4812 17.9365C24.8442 17.8722 25.2013 17.7736 25.5405 17.5706C26.05 17.2657 26.4576 16.8165 26.7116 16.2798C26.8807 15.9225 26.9442 15.5575 26.9729 15.1901C27 14.8436 27 14.4257 27 13.944V13.9439V13.3925V13.3924C27 12.8796 27 12.4365 26.9705 12.0707C26.9393 11.684 26.8704 11.2996 26.6851 10.9276C26.408 10.3715 25.965 9.91514 25.4174 9.62158C25.0512 9.42522 24.669 9.34492 24.2834 9.30221C23.9186 9.26181 23.4756 9.24861 22.963 9.23334L22.9252 9.23222L8.71918 8.8086L8.42934 7.12977L8.42933 7.12967C8.3928 6.91792 8.35663 6.7083 8.31208 6.531C8.26249 6.33369 8.18699 6.10751 8.03823 5.88578C7.82889 5.57374 7.53589 5.32699 7.19279 5.17379C6.94897 5.06492 6.71325 5.02899 6.51038 5.0137L4 5Z"></path>
+                            <path fill-rule="evenodd" clip-rule="evenodd" d="M12.0487 22.5756C11.3665 22.5756 10.8023 23.1345 10.8023 23.8378C10.8023 24.5411 11.3665 25.1 12.0487 25.1C12.7308 25.1 13.295 24.5411 13.295 23.8378C13.295 23.1345 12.7308 22.5756 12.0487 22.5756ZM9.00232 23.8378C9.00232 22.1529 10.36 20.7756 12.0487 20.7756C13.7373 20.7756 15.095 22.1529 15.095 23.8378C15.095 25.5228 13.7373 26.9 12.0487 26.9C10.36 26.9 9.00232 25.5228 9.00232 23.8378Z"></path>
+                            <path fill-rule="evenodd" clip-rule="evenodd" d="M22.244 22.5756C21.5619 22.5756 20.9976 23.1345 20.9976 23.8378C20.9976 24.5411 21.5619 25.1 22.244 25.1C22.9261 25.1 23.4903 24.5411 23.4903 23.8378C23.4903 23.1345 22.9261 22.5756 22.244 22.5756ZM19.1976 23.8378C19.1976 22.1529 20.5553 20.7756 22.244 20.7756C23.9326 20.7756 25.2903 22.1529 25.2903 23.8378C25.2903 25.5228 23.9326 26.9 22.244 26.9C20.5553 26.9 19.1976 25.5228 19.1976 23.8378Z"></path>
+                        </svg>
+                    </div>
+                    <span class="description">On Sale</span>
+                </div>
+            </div>
+
+            <div @click="scrollToTopClicked()" class="scroll-top" :class="scrollToTop ? 'active' : ''">
+                <button><span class="fas fa-angle-up"></span></button>
+            </div>
+        </div>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.min.js"></script>
+        <script src="main.js" charset="utf-8"></script>
+    </body>
+</html>
