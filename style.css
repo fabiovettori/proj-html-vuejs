@@ -1,8 +1,34 @@
+/* global var */
+:root {
+    /* color scheme - "color cube"*/
+    --white: #fff;
+    --tundora: #484848;
+    --bayleaf: #79b27b;
+    --firefly: #040b11;
+    --crimson: #e32929;
+    --akaroa: #d6c9b0;
+    --japanesemaple: #78020f;
+    --cranmberry: #db677d;
+    --seagull: #79b7e4;
+    --deepcerulean: #036db4;
+
+    /* following colors has been supposed and have to be discussed with designers */
+    --green: #69aa53;
+    --lightgreen: #9eeb85;
+    --athensgray: #e8e5eb;
+    --capecod: #3f4843;
+    --gumbo: #7f9ea8;
+}
+
 /* general */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
 }
 
 body {
@@ -14,15 +40,19 @@ body {
     font-size: 14px;
     font-weight: 700;
     padding: 10px 20px;
-    background: #7abc64;
+    background: var(--bayleaf);
     transition: all .3s ease;
     text-transform: uppercase;
-    color: #fff;
+    color: var(--white);
     border: none;
 }
 
 .btn-green:hover {
-    background: #69aa53;
+    background: var(--green);
+}
+
+.btn-green:focus {
+    outline: none;
 }
 
 .btn-blue {
@@ -30,43 +60,42 @@ body {
     font-size: 12px;
     font-weight: 700;
     padding: 8px 18px;
-    border: 3px solid #7799ad;
+    border: 3px solid var(--gumbo);
     transition: all .3s ease;
     text-transform: uppercase;
-    color: #7799ad;
+    color: var(--gumbo);
 }
 
 .btn-blue:hover {
-    border-color: #69aa53;
-    color: #69aa53;
+    border-color: var(--green);
+    color: var(--green);
 }
 
 /* contacts */
 .contacts {
-    background-color: #353637;
+    background-color: var(--tundora);
     height: 44px;
-    color: #929aa3;
+    color: var(--athensgray);
     font-size: 12px;
 }
 
 .contacts span {
     line-height: 44px;
+    font-weight: 100;
 }
-
 
 /* header */
 header {
-    background-color: rgba(53,54,55,0.5);
+    background-color: rgba(71, 71, 71, .5); /* tundora with 50% opacity */
     position: sticky;
     width: 100%;
     left: 0;
     top: 0;
     z-index: 2;
-    transition: all .3s ease;
 }
 
 header.active {
-    background-color: rgb(53,54,55);
+    background-color: var(--tundora);
 }
 
 header .logo {
@@ -75,12 +104,11 @@ header .logo {
 
 header .row {
     height: 115px;
-    transition: all .3s ease;
 }
 
 header .row.active {
     height: 65px;
-    background-color: rgba(53,54,55,0.9);
+    background-color: var(--tundora);
 }
 
 header ul {
@@ -103,7 +131,7 @@ header ul li::after {
     bottom: 0;
     width: 0;
     height: 2px;
-    background-color: #7abc64;
+    background-color: var(--bayleaf);
     transition: all .3s ease;
 }
 
@@ -116,7 +144,7 @@ header ul li:hover::after {
 
 header ul li span {
     font-size: 9px;
-    background-color: #7abc64;
+    background-color: var(--bayleaf);
     padding: 5px 6px;
     border-radius: 4px;
     margin-left: 7px;
@@ -125,7 +153,7 @@ header ul li span {
 }
 
 header .call-to-action a {
-    background-color: #7abc64;
+    background-color: var(--bayleaf);
     padding: 10px 20px;
     width: 200px;
     border-radius: 22px;
@@ -137,12 +165,12 @@ header .call-to-action a {
 
 header .call-to-action a:hover {
     background-color: transparent;
-    border: 2px solid #7abc64;
-    color: #7abc64;
+    border: 2px solid var(--bayleaf);
+    color: var(--bayleaf);
 }
 
 header a {
-    color: #fff;
+    color: var(--white);
     font-size: 14px;
     text-transform: uppercase;
     font-weight: 700;
@@ -153,11 +181,11 @@ header a {
 
 header a:hover {
     text-decoration: none;
-    color: #7abc64;
+    color: var(--bayleaf);
 }
 
 header a:hover span {
-    color: #fff;
+    color: var(--white);
 }
 
 
@@ -172,7 +200,7 @@ header a:hover span {
 
 .hero div {
     height: 100%;
-    color: #fff;
+    color: var(--white);
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -199,10 +227,10 @@ header a:hover span {
 .extras > div {
     width: 65px;
     height: 65px;
-    background-color: #fff;
+    background-color: var(--white);
     border-radius: 5px;
     margin-bottom: 10px;
-    box-shadow: 0 10px 20px 5px rgba(0,0,0,.15);
+    box-shadow: 0 10px 20px 5px rgba(4, 11, 17, 0.15); /* firefly rgba 15% opacity */
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -215,7 +243,7 @@ header a:hover span {
 }
 
 .extras svg {
-    fill: #33475b;
+    fill: var(--capecod);
     height: 100%;
 }
 
@@ -241,7 +269,7 @@ header a:hover span {
 .extras .bottom-element div > span:first-of-type {
     font-size: 28px;
     font-weight: 700;
-    color: #7abc64;
+    color: var(--bayleaf);
     padding-left: 2px;
     position: relative;
 }
@@ -275,15 +303,15 @@ header a:hover span {
 
 .contacts-collections .description h2 {
     font-size: 40px;
-    color: #494c4e;
+    color: var(--tundora);
     margin-bottom: 31px;
 }
 
 .contacts-collections .description p {
-    color: #929aa3;
+    color: rgba(71, 71, 71, .5); /*tundora with 50% opacity*/
     font-size: 21px;
     line-height: 2;
-    font-weight: 300;
+    font-weight: 400;
 }
 
 .contacts-collections .description p:last-of-type {
@@ -293,39 +321,39 @@ header a:hover span {
 .contacts-collections .contact-form > div {
     border-radius: 10px;
     padding: 40px;
-    background-color: #fff;
-    box-shadow: rgba(61, 61, 61, 0.1) 0px 25px 20px 0px;
+    background-color: var(--white);
+    box-shadow: rgba(71, 71, 71, 0.1) 0px 25px 20px 0px; /* tundora with 10% opacity */
     position: relative;
     top: -110px;
 }
 
 .contacts-collections .contact-form h3 {
     font-size: 30px;
-    color: #7abc64;
+    color: var(--bayleaf);
     margin-bottom: 40px;
 }
 
 .contacts-collections .contact-form p {
     font-size: 16px;
-    color: #929aa3;
+    color: rgba(71, 71, 71, 0.5); /* tundora with 50% opacity */
     margin-bottom: 40px;
 }
 
 .contacts-collections .contact-form input {
     margin-bottom: 28px;
     height: 50px;
-    background-color: #f7f7f7;
+    background-color: var(--white);
 }
 
 .contacts-collections .contact-form input:focus {
     outline: none;
     box-shadow: none;
-    border-color: #ced4da;
+    border-color: rgba(71, 71, 71, 0.4); /* tundora with 40% opacity */
 }
 
 .contacts-collections .contact-form input::placeholder {
     font-size: 12px;
-    color: #929aa3;
+    color: rgba(71, 71, 71, 0.5); /* tundora with 50% opacity */
 }
 
 /* call-to-action */
@@ -333,7 +361,7 @@ section.call-to-action {
     background-image: url('img/horizontal-cta-background.jpg');
     background-size: cover;
     padding: 60px 0px;
-    color: #fff;
+    color: var(--white);
 }
 
 section.call-to-action h2 {
@@ -365,13 +393,14 @@ section.call-to-action span:first-of-type {
     width: 48px;
     height: 35px;
     opacity: 0;
-    background-color: #333;
+    background-color: var(--tundora);
     border-radius: 4px 4px 0 0;
     position: fixed;
     right: 75px;
     bottom: 0;
     text-align: center;
     transition: all .3s ease;
+    z-index: 3;
 }
 
 .scroll-top.active {
@@ -379,18 +408,25 @@ section.call-to-action span:first-of-type {
 }
 
 .scroll-top:hover {
-    background-color: #7abc64;
+    background-color: var(--bayleaf);
 }
 
-.scroll-top a {
+.scroll-top button {
     font-size: 20px;
-    color: #fff;
+    color: var(--white);
+    background-color: var(--tundora);
     text-decoration: none;
+    border: none;
+    border-radius: 5px 5px 0 0;
     display: block;
     width: 100%;
 }
 
-.scroll-top a span {
+.scroll-top button:focus {
+    outline: none;
+}
+
+.scroll-top button span {
     display: block;
     line-height: 35px;
 }
@@ -404,11 +440,11 @@ section.call-to-action span:first-of-type {
 }
 
 .service-offers .courses {
-    box-shadow: rgba(61, 61, 61, 0.27) 0px 25px 20px 0px;
+    box-shadow: rgba(71, 71, 71, 0.1) 0px 25px 20px 0px; /* tundora with 10% opacity */
     padding: 50px 30px;
     margin: 0 10px;
     border-radius: 10px;
-    background-color: #fff;
+    background-color: var(--white);
     position: relative;
     bottom: 110px;
     overflow: hidden;
@@ -423,23 +459,23 @@ section.call-to-action span:first-of-type {
     line-height: 100px;
     left: -42px;
     top: -18px;
-    background: #7abc64;
+    background: var(--bayleaf);
     text-transform: uppercase;
-    color: #fff;
+    color: var(--white);
     font-weight: 700;
     transform: rotateZ(-45deg);
 }
 
 .service-offers .courses h2 {
     font-size: 40px;
-    color: #494c4e;
+    color: var(--tundora);
     margin-bottom: 50px;
     font-weight: 700;
 }
 
 .service-offers .courses p {
     font-size: 16px;
-    color: #929aa3;
+    color: rgba(71, 71, 71, .5); /* tundora with 50% opacity */
     line-height: 2;
     margin-bottom: 50px;
 }
@@ -455,7 +491,7 @@ section.call-to-action span:first-of-type {
 
 .service-offers .services > div {
     padding: 15px;
-    color: #7799ad;
+    color: var(--gumbo);
 }
 
 .service-offers .services > div > div {
@@ -471,6 +507,8 @@ section.call-to-action span:first-of-type {
     background-color: #e4e9ed;
     clip-path: polygon(0% 0%, 100% 0%, 50% 100%);
     height: 120px;
+    position: relative;
+    top: -1px;
 }
 
 /* social-proof */
@@ -482,9 +520,9 @@ section.call-to-action span:first-of-type {
 }
 
 .social-proof .card-container {
-    background-color: #7abc64;
+    background-color: var(--bayleaf);
     border-radius: 12px;
-    box-shadow: rgba(61, 61, 61, 0.1) 0px 25px 20px 0px;
+    box-shadow: rgba(71, 71, 71, 0.1) 0px 25px 20px 0px; /* tundora with 10% opacity */
     margin: 0 7px;
 }
 
@@ -495,7 +533,7 @@ section.call-to-action span:first-of-type {
 }
 
 .social-proof .card {
-    background-color: #fff;
+    background-color: var(--white);
     border-radius: 5px 5px 12px 12px;
     height: 100%;
     border: none;
@@ -507,7 +545,7 @@ section.call-to-action span:first-of-type {
     display: block;
     position: absolute;
     font-size: 50px;
-    color: #929aa3;
+    color: rgba(71, 71, 71, 0.7);  /* tundora with 70% opacity */
     left: 50%;
     top: 50%;
     transform: translate(-50%, -50%);
@@ -515,7 +553,7 @@ section.call-to-action span:first-of-type {
 
 .social-proof p {
     font-size: 14px;
-    color: #929aa3;
+    color: rgba(71, 71, 71, 0.7);  /* tundora with 70% opacity */
     font-weight: 700;
     text-transform: uppercase;
     margin-bottom: 60px;
@@ -541,12 +579,12 @@ section.call-to-action span:first-of-type {
     font-size: 24px;
     font-weight: 700;
     line-height: 1.5;
-    color: #494c4e;
+    color: var(--tundora);
     margin: 20px 0 10px;
 }
 
 .instructors  p {
-    color: #929aa3;
+    color: rgba(71, 71, 71, 0.7); /* tundora with 70% opacity */
     line-height: 2;
 }
 
@@ -563,20 +601,41 @@ section.call-to-action span:first-of-type {
     transition: all .3s ease;
 }
 
+.instructor > div {
+    position: relative;
+}
+
+.instructor .tooltip {
+    position: absolute;
+    background-color: var(--white);
+    color: var(--tundora);
+    padding: 3px 10px;
+    border: 1px solid var(--tundora);
+    top: 25%;
+    left: 50%;
+    opacity: 0;
+    white-space: nowrap;
+    transition: opacity .2s ease;
+}
+
+.instructor > div:hover .tooltip {
+    opacity: 1;
+}
+
 .instructors img:hover {
     transform: scale(1.05);
-    box-shadow: 0 3px 15px rgba(0,0,0,.4);
+    box-shadow: 0 3px 15px rgba(4, 11, 17, 0.4); /* firefly with 40% opaity */
 }
 
 .instructors .instructor-container {
-    background-color: #7abc64;
+    background-color: var(--bayleaf);
     border-radius: 12px;
-    box-shadow: rgba(61, 61, 61, 0.1) 0px 25px 20px 0px;
+    box-shadow: rgba(4, 11, 17, 0.1) 0px 25px 20px 0px; /* firefly with 10% opaity */
     margin: 0 7px;
 }
 
 .instructors .instructor {
-    background-color: #fff;
+    background-color: var(--white);
     border-radius: 5px 5px 12px 12px;
     height: 100%;
     border: none;
@@ -598,7 +657,7 @@ section.call-to-action span:first-of-type {
 
 .instructors .fab {
     font-size: 18px;
-    color: #929aa3;
+    color: rgba(71, 71, 71, 0.5);  /* tundora with 50% opacity */
     margin: 0 10px;
 }
 
@@ -619,7 +678,7 @@ section.call-to-action span:first-of-type {
 .testimonials h2 {
     font-size: 40px;
     font-weight: 700;
-    color: #494c4e;
+    color: var(--tundora);
 }
 
 .testimonials p:last-of-type {
@@ -631,7 +690,7 @@ section.call-to-action span:first-of-type {
 
 .testimonials p, .testimonials span {
     font-size: 21px;
-    color: #929aa3;
+    color: rgba(71, 71, 71, 0.5);  /* tundora with 50% opacity */
     margin: 30px 0;
 }
 
@@ -655,7 +714,7 @@ section.call-to-action span:first-of-type {
     width: 12px;
     height: 12px;
     border-radius: 50%;
-    border: 1px solid #929aa3;
+    border: 1px solid rgba(71, 71, 71, 0.5);  /* tundora with 50% opacity */
     background-color: transparent;
     margin: 0 7px;
 }
@@ -664,14 +723,115 @@ section.call-to-action span:first-of-type {
 }
 
 .testimonials .markers.active {
-    background-color: #929aa3;
+    background-color: rgba(71, 71, 71, 0.5);  /* tundora with 50% opacity */
 }
 
 /* latest news */
 .latest_news {
     background-image: url('img/latestnews-background.jpg');
-    padding: 100px 0;
-    color: #fff;
+    background-size: cover;
+    padding-bottom: 50px;
+}
+
+.latest_news > div:first-of-type {
+    border-radius: 5px 5px 0 0;
+    box-shadow: rgba(4, 5, 17, 0.2) 0px 45px 40px 0px; /* firefly with 20% opacity */
+}
+
+.latest_news h2 {
+    font-size: 40px;
+    font-weight: 700;
+    color: var(--tundora);
+    margin: 50px 0;
+}
+
+.latest_news a {
+    font-size: 21px;
+    margin: 15px 0;
+    font-weight: 700;
+    color: var(--bayleaf);
+}
+
+.latest_news a:hover {
+    text-decoration: none;
+}
+
+.latest_news .card-news p:first-of-type {
+    font-size: 12px;
+    font-weight: 400;
+    color: rgba(71, 71, 71, 0.5); /* tundora with 50% opacity */
+}
+
+.latest_news .card-news p:first-of-type a {
+    font-size: 12px;
+    font-weight: 400;
+}
+
+.latest_news .card-news p:last-of-type {
+    font-size: 16px;
+    font-weight: 400;
+    color: rgba(71, 71, 71, 0.5); /* tundora with 50% opacity */
+    line-height: 2;
+}
+
+.latest_news span {
+    display: block;
+    font-size: 12px;
+    color: rgba(71, 71, 71, 0.5); /* tundora with 50% opacity */
+}
+
+.latest_news .divider {
+    display: inline;
+    width: 5px;
+    margin: 0 5px 0 2px;
+    color: rgba(71, 71, 71, 0.5); /* tundora with 50% opacity */
+}
+
+.latest_news img {
+    max-width: 100%;
+    transition: all .5s ease;
+}
+
+.latest_news img:hover {
+    transform: scale(1.1);
+}
+
+.latest_news .preview-service {
+    margin-bottom: 15px;
+    overflow: hidden;
+}
+
+.latest_news .section_cards > div:first-of-type .card-news {
+    padding-left: 40px;
+}
+
+.latest_news .section_cards > div:last-of-type .card-news {
+    padding-right: 40px;
+}
+
+.latest_news .cta-section {
+    padding: 40px 0;
+}
+
+.latest_news .buffle {
+    height: 100px;
+    background-color: var(--white);
+    clip-path: polygon(0% 0%, 0% 5%, 50% 100%, 100% 5%, 100% 0%);
+    position: relative;
+    top: -5px;
+}
+
+.latest_news .background {
+    background-color: var(--gumbo);
+    border-radius: 10px 10px 0 0;
+    margin-top: -50px;
+    position: relative;
+}
+
+.latest_news .foreground {
+    margin-top: 5px;
+    background-color: var(--white);
+    border-radius: 5px 5px 0 0;
 }
 
 /* newsletter */
@@ -683,13 +843,13 @@ section.call-to-action span:first-of-type {
 
 .newsletter h2 {
     font-size: 30px;
-    color: #494c4e;
+    color: var(--tundora);
     margin-bottom: 50px;
 }
 
 .newsletter p {
     font-size: 14px;
-    color: #929aa3;
+    color: rgba(71, 71, 71, 0.5); /* tundora with 50% opacity */
 }
 
 .newsletter input {
@@ -699,8 +859,8 @@ section.call-to-action span:first-of-type {
     width: 80%;
     margin: auto;
     margin-bottom: 30px;
-    border: 1px solid #d2d2d2;
-    background-color: #f7f7f7;
+    border: 1px solid rgba(71, 71, 71, 0.2); /* tundora with 20% opacity */
+    background-color: var(--white);
     padding: 0 20px;
 }
 
@@ -717,34 +877,35 @@ section.call-to-action span:first-of-type {
 /* footer */
 .contacts-details {
     background-image: url('img/footer-background-color.jpg');
-    padding: 50px 0;
+    background-size: cover;
+    padding: 70px 0;
 }
 .contacts-details p {
     font-size: 13px;
     line-height: 2;
     font-weight: 400;
-    color: #929aa3;
+    color: rgba(229, 232, 235, 0.4); /* athens gray with 40% opacity */
 }
 
 .contacts-details img {
-    max-width: 100%;
+    max-width: 80%;
     margin-bottom: 20px;
 }
 
 .contacts-details h3 {
     font-size: 16px;
     font-weight: 700;
-    color: #fff;
+    color: var(--white);
 }
 
 .contacts-details ul li {
-    color: #929aa3;
+    color: rgba(229, 232, 235, 0.4); /* athens gray with 40% opacity */
     font-size: 13px;
     margin: 10px 0;
 }
 
 .contacts-details span {
-    color: #bbcbd3;
+    color: var(--athensgray);
     font-size: 17px;
     margin-right: 10px;
 }
@@ -752,35 +913,59 @@ section.call-to-action span:first-of-type {
 .contacts-details a {
     font-size: 17px;
     font-weight: 400;
-    color: #7abc64;
+    color: var(--bayleaf);
     transition: all .2s ease;
 }
 
 .contacts-details li .icon-green {
-    color: #7abc64;
+    color: var(--bayleaf);
+}
+
+.contacts-details li.courses {
+    margin: 5px 0;
 }
 
 .contacts-details a:hover {
     text-decoration: none;
-    color: #9eeb85;
+    color: var(--lightgreen);
+}
+
+.contacts-details button {
+    background-color: var(--bayleaf);
+    width: 140px;
+    padding: 10px 20px;
+    border: 2px solid transparent;
+    border-radius: 22px;
+}
+
+.contacts-details button:hover {
+    background-color: transparent;
+    border: 2px solid var(--bayleaf);
+    color: var(--bayleaf);
 }
 
 .credits {
-    background-color: #1c1d1e;
+    background-color: var(--firefly);
     padding: 30px 0;
-    color: #72767a;
+    color: var(--tundora);
     font-size: 12px;
     padding: 50px 0;
 }
 
 .credits .external-ref {
-    color: #7abc64;
+    color: var(--bayleaf);
 }
 
 .credits .social a {
-    color: #fff;
+    color: var(--white);
     font-size: 16px;
     margin: 0 10px;
+    transition: all .2s ease;
+}
+
+.credits a:hover {
+    text-decoration: none;
+    color: var(--lightgreen);
 }
 
 .credits p {

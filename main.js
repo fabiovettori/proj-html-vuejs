@@ -8,13 +8,15 @@ var app = new Vue({
         // header button
         badge: 'new',
         headerButton: 'book now',
+        footerButton: 'book now',
         // toggle header on page scroll
         headerToggle: false,
         scrollToTop: false,
         // testimonials carousel
         testimonials: ['sophia jones', 'harold green', 'grant harvey', 'kate lewis', 'kelly johnson'],
         testimonialActive: 0,
-        footerLinks: ['Pass Plus', 'Intensive Course', 'Automatic', 'Instructor Training']
+        footerLinks: ['Pass Plus', 'Intensive Course', 'Automatic', 'Instructor Training'],
+        timer: ''
     },
     mounted: function(){
         this.scrollListener(),
@@ -48,21 +50,26 @@ var app = new Vue({
             });
         },
         scrollToTopClicked: function(){
-            window.scrollTo = 0;
+            let windowYposition = window.scrollY;
+            console.log(windowYposition);
+
+            window.scrollTo({top: 0, behavior: 'smooth'});
         },
         scrollTestimonials: function(){
             let self = this;
-            let index = 0;
 
-            let timer = setInterval(function(){
-                self.testimonialActive = index;
-                index++
+            this.timer = setInterval(function(){
+                self.testimonialActive ++
 
-                if (index > self.testimonials.length - 1) {
-                    index = 0
+                if (self.testimonialActive > self.testimonials.length - 1) {
+                    app.testimonialActive = 0
                 }
+            },5000);
 
-            },5000)
+            if (this.userInteractionCarousel == true) {
+                timer.clearInterval();
+                console.log('yes');
+            }
         },
         getTestimnonialName: function(){
             let index = this.testimonialActive;
@@ -73,7 +80,8 @@ var app = new Vue({
         },
         getTestimonialMarker: function(i){
             this.testimonialActive = i - 1;
-
+            clearInterval(this.timer);
+            this.scrollTestimonials();
         }
     }
 });

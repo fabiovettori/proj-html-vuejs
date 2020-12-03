@@ -44,7 +44,7 @@
                 <div class="container-lg">
                     <div class="row align-items-center" :class="headerToggle ? 'active' : ''">
                         <div class="col-lg-4">
-                            <img class="logo" :src="headerLogo" alt="avada logo">
+                            <a href="#"><img class="logo" :src="headerLogo" alt="avada logo"></a>
                         </div>
                         <ul class="col-lg-6 d-flex justify-content-between align-middle">
                             <li v-for="(link, i) in headerLinks" class="list-unstyled">
@@ -54,8 +54,7 @@
                             </li>
                         </ul>
                         <div class="col-lg-2 call-to-action">
-                            <a href="#" @mouseenter="callToActionToggle()" @mouseleave="callToActionToggle()"> {{ headerButton }}
-                            </a>
+                            <a href="#" @mouseenter="headerButton = 'learn more'" @mouseleave="headerButton = 'book now'">{{ headerButton }}</a>
                         </div>
                     </div>
                 </div>
@@ -88,13 +87,11 @@
                                     <h3>First Lesson Free!</h3>
                                     <p>When you make a block booking with us your first lesson is included free.</p>
                                     <form class="form-group" action="index.html" method="post">
-                                        <div>
-                                            <input type="text" class="form-control" name="name" placeholder="Your Name">
-                                            <input type="email" class="form-control" name="email" placeholder="Email">
-                                            <input type="text" class="form-control" name="phone" placeholder="Telephone">
-                                            <input type="text" class="form-control" name="location" placeholder="Location">
-                                            <button type="submit" class="btn-green" name="button">request a callback</button>
-                                        </div>
+                                        <input type="text" class="form-control" name="name" placeholder="Your Name" minlength="5">
+                                        <input type="email" class="form-control" name="email" placeholder="Email" minlength="5">
+                                        <input type="text" class="form-control" name="phone" placeholder="Telephone" minlength="5">
+                                        <input type="text" class="form-control" name="location" placeholder="Location" minlength="5">
+                                        <button type="submit" class="btn-green" name="button">request a callback</button>
                                     </form>
                                 </div>
                             </div>
@@ -218,7 +215,12 @@
                             <div class="col-lg-4">
                                 <div class="instructor-container">
                                     <div class="instructor text-center">
-                                        <img src="img/instructor-mikehart.jpg" alt="mikehart">
+                                        <div>
+                                            <img src="img/instructor-mikehart.jpg" alt="mikehart">
+                                            <div class="tooltip">
+                                                instructor-mikehart
+                                            </div>
+                                        </div>
                                         <h3>Mike Hart</h3>
                                         <div class="social">
                                             <a href="#"><span class="fab fa-facebook-f"></span></a>
@@ -232,7 +234,12 @@
                             <div class="col-lg-4">
                                 <div class="instructor-container">
                                     <div class="instructor text-center">
-                                        <img src="img/instructor-johnsmith.jpg" alt="johnsmith">
+                                        <div>
+                                            <img src="img/instructor-johnsmith.jpg" alt="johnsmith">
+                                            <div class="tooltip">
+                                                instructor-johnsmith
+                                            </div>
+                                        </div>
                                         <h3>John Smith</h3>
                                         <div class="social">
                                             <a href="#"><span class="fab fa-facebook-f"></span></a>
@@ -246,7 +253,12 @@
                             <div class="col-lg-4">
                                 <div class="instructor-container">
                                     <div class="instructor text-center">
-                                        <img src="img/instructor-angelahart.jpg" alt="angelahart">
+                                        <div>
+                                            <img src="img/instructor-angelahart.jpg" alt="angelahart">
+                                            <div class="tooltip">
+                                                instructor-angelahart
+                                            </div>
+                                        </div>
                                         <h3>Angela Hart</h3>
                                         <div class="social">
                                             <a href="#"><span class="fab fa-facebook-f"></span></a>
@@ -283,15 +295,54 @@
                 <section class="latest_news">
                     <!-- Latest News -->
                     <div class="container">
-                        <h2 class="text-center">Latest News</h2>
+                        <div class="row background">
+                            <div class="col-lg-12">
+                                <div class="row foreground">
+                                    <div class="col-lg-12">
+                                        <h2 class="text-center">Latest News</h2>
+                                    </div>
+                                    <div class="col-lg-12">
+                                        <div class="row section_cards">
+                                            <div class="col-lg-6">
+                                                <div class="card-news text-center">
+                                                    <div class="preview-service">
+                                                        <a href="#"><img src="img/blog-choosecar-700x441.jpg" alt="blog-choosecar"></a>
+                                                    </div>
+                                                    <a href="#">What Car to Start With?</a>
+                                                    <p>February 7th, 2019
+                                                        <span class="divider"></span>
+                                                        <a href="#">0 Comments</a>
+                                                    </p>
+                                                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing</p>
+                                                </div>
+                                            </div>
+                                            <div class="col-lg-6">
+                                                <div class="card-news text-center">
+                                                    <div class="preview-service">
+                                                        <a href="#"><img src="img/blogpost-10and2-700x441.jpg" alt="blog-choosecar"></a>
+                                                    </div>
+                                                    <a href="#">What Car to Start With?</a>
+                                                    <p>February 7th, 2019
+                                                        <span class="divider"></span>
+                                                        <a href="#">0 Comments</a>
+                                                    </p>
+                                                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing</p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-12 text-center cta-section">
+                                        <button class="btn-green">More from the blog</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="container">
                         <div class="row">
                             <div class="col-lg-12">
-                                <div class="row">
-                                    <div class="col-lg-6">
-
-                                    </div>
-                                    <div class="col-lg-6">
-
+                                <div class="row buffle">
+                                    <div class="col-lg-12">
                                     </div>
                                 </div>
                             </div>
@@ -322,13 +373,13 @@
                     <div class="container">
                         <div class="row align-items-center">
                             <div class="col-lg-3">
-                                <img class="logo" :src="headerLogo" alt="avada logo">
+                                <a href="#"><img class="logo" :src="headerLogo" alt="avada logo"></a>
                                 <p>Avada Driving School is the right choice for experienced drivers looking for a refresher course, or the brand new driver wanting to pass first time.</p>
                             </div>
                             <div class="col-lg-3">
                                 <h3 class="text-uppercase">contats details</h3>
                                 <ul class="list-group list-unstyled">
-                                    <li>
+                                    <li class="d-flex">
                                         <span class="fas fa-home"></span>
                                         12345 North Main Street, New York, NY 555555
                                     </li>
@@ -346,17 +397,17 @@
                                     </li>
                                 </ul>
                             </div>
-                            <div class="col-lg-3">
-                                <h3 class="text-uppercase">contats details</h3>
+                            <div class="col-lg-3 align-self-start">
+                                <h3 class="text-uppercase">courses</h3>
                                 <ul class="list-group list-unstyled">
-                                    <li v-for="link in footerLinks">
+                                    <li v-for="link in footerLinks" class="courses">
                                         <span class="far fa-arrow-alt-circle-right icon-green"></span>
                                         <a href="#">{{ link }}</a>
                                     </li>
                                 </ul>
                             </div>
-                            <div class="col-lg-3">
-                                <button class="btn-green">{{ headerButton }}</button>
+                            <div class="col-lg-3 text-center">
+                                <button class="btn-green" @mouseenter="footerButton = 'learn more'" @mouseleave="footerButton = 'book now'">{{ footerButton }}</button>
                             </div>
                         </div>
                     </div>
@@ -411,7 +462,7 @@
             </div>
 
             <div @click="scrollToTopClicked()" class="scroll-top" :class="scrollToTop ? 'active' : ''">
-                <a href="#"><span class="fas fa-angle-up"></span></a>
+                <button><span class="fas fa-angle-up"></span></button>
             </div>
         </div>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.min.js"></script>
