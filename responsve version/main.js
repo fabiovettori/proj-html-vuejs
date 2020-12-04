@@ -18,7 +18,8 @@ var app = new Vue({
         footerLinks: ['Pass Plus', 'Intensive Course', 'Automatic', 'Instructor Training'],
         // save setInterval function of testimonials' carousel
         badge: 'new',
-        timer: ''
+        timer: '',
+        hamburger: ''
     },
     mounted: function(){
         this.scrollListener(),
@@ -88,6 +89,13 @@ var app = new Vue({
             this.testimonialActive = i - 1;
             clearInterval(this.timer);
             this.scrollTestimonials();
+        },
+        hamburgerToggle: function(){
+            if (this.hamburger == '') {
+                this.hamburger = 'active'
+            } else {
+                this.hamburger = ''
+            }
         }
     }
 });

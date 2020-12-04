@@ -24,12 +24,12 @@
         <div id="root">
             <section class="contacts">
                 <!-- contacts -->
-                <div class="container-lg">
+                <div class="container-sm">
                     <div class="row">
-                        <div class="col-lg-6">
+                        <div class="col-12 text-center col-lg-6">
                             <span>We have a 95% Successful Pass Rate!</span>
                         </div>
-                        <div class="col-lg-6 text-right">
+                        <div class="col-12 text-center col-lg-6 text-lg-right">
                             <span>
                                 <i class="glyphicon fa-phone fas"></i>
                                 Give us a call to book your tuition! 1-800-555-555
@@ -43,18 +43,27 @@
                 <!-- header -->
                 <div class="container-lg">
                     <div class="row align-items-center" :class="headerToggle ? 'active' : ''">
-                        <div class="col-lg-4">
+                        <div class="col-6 col-lg-4">
                             <a href="#"><img class="logo" :src="headerLogo" alt="avada logo"></a>
                         </div>
-                        <ul class="col-lg-6 d-flex justify-content-between align-middle">
-                            <li v-for="(link, i) in headerLinks" class="list-unstyled">
-                                <a href="#">{{ link }}
-                                    <span v-if="i == 3">{{ badge }}</span>
-                                </a>
-                            </li>
-                        </ul>
-                        <div class="col-lg-2 call-to-action">
-                            <a href="#" @mouseenter="headerButton = 'learn more'" @mouseleave="headerButton = 'book now'">{{ headerButton }}</a>
+                        <div class="col-lg-6 d-lg-block header-links-container" :class="hamburger">
+                            <ul class="d-lg-flex justify-content-between align-middle">
+                                <li v-for="(link, i) in headerLinks" class="list-unstyled">
+                                    <a href="#">{{ link }}
+                                        <span v-if="i == 3">{{ badge }}</span>
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="col-6 text-right col-lg-2 call-to-action">
+                            <a href="#" @mouseenter="headerButton = 'learn more'" @mouseleave="headerButton = 'book now'" type="call" class="d-none d-lg-block">{{ headerButton }}</a>
+                            <div class="hamburger d-lg-none" :class="hamburger" @click="hamburgerToggle()">
+                                <div>
+                                    <span></span>
+                                    <span></span>
+                                    <span></span>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -62,7 +71,7 @@
 
             <section class="hero">
                 <!-- hero -->
-                <div class="container-lg">
+                <div class="container-sm">
                     <div class="row">
                         <div class="col-lg-12">
                             <h1>Drive with Avada</h1>
@@ -117,7 +126,7 @@
 
                 <section class="service-offers">
                     <!-- service offers -->
-                    <div class="container">
+                    <div class="container-lg">
                         <div class="row text-center">
                             <div class="col-lg-5">
                                 <div class="courses">
@@ -160,7 +169,7 @@
 
                 <section class="social-proof">
                     <!-- social-proof -->
-                    <div class="container">
+                    <div class="container-lg">
                         <div class="row no-gutters">
                             <div class="col-lg-4">
                                 <div class="card-container">
@@ -210,9 +219,9 @@
                         </div>
                     </div>
 
-                    <div class="container">
+                    <div class="container-lg">
                         <div class="row no-gutters">
-                            <div class="col-lg-4">
+                            <div class="col-12 col-lg-4">
                                 <div class="instructor-container">
                                     <div class="instructor text-center">
                                         <div>
@@ -231,7 +240,7 @@
                                     </div>
                                 </div>
                             </div>
-                            <div class="col-lg-4">
+                            <div class="col-12 col-lg-4">
                                 <div class="instructor-container">
                                     <div class="instructor text-center">
                                         <div>
@@ -250,7 +259,7 @@
                                     </div>
                                 </div>
                             </div>
-                            <div class="col-lg-4">
+                            <div class="col-12 col-lg-4">
                                 <div class="instructor-container">
                                     <div class="instructor text-center">
                                         <div>
@@ -372,39 +381,42 @@
                 <section class="contacts-details">
                     <div class="container">
                         <div class="row align-items-center">
-                            <div class="col-lg-3">
+                            <div class="col-12 text-center col-lg-3 text-lg-left">
                                 <a href="#"><img class="logo" :src="headerLogo" alt="avada logo"></a>
                                 <p>Avada Driving School is the right choice for experienced drivers looking for a refresher course, or the brand new driver wanting to pass first time.</p>
                             </div>
-                            <div class="col-lg-3">
+                            <div class="col-12 text-center col-lg-3 text-lg-left">
                                 <h3 class="text-uppercase">contats details</h3>
                                 <ul class="list-group list-unstyled">
-                                    <li class="d-flex">
-                                        <span class="fas fa-home"></span>
+                                    <li class="d-block d-lg-flex">
+                                        <span class="d-none d-lg-inline fas fa-home"></span>
                                         12345 North Main Street, New York, NY 555555
                                     </li>
                                     <li>
-                                        <span class="fas fa-phone"></span>
+                                        <span class="d-none d-lg-inline fas fa-phone"></span>
                                         1.800.555.6789
                                     </li>
                                     <li>
-                                        <span class="fas fa-envelope"></span>
+                                        <span class="d-none d-lg-inline fas fa-envelope"></span>
                                         info@your-domain.com
                                     </li>
                                     <li>
-                                        <span class="fas fa-link"></span>
+                                        <span class="d-none d-lg-inline fas fa-link"></span>
                                         Theme-Fusion.com
                                     </li>
                                 </ul>
                             </div>
-                            <div class="col-lg-3 align-self-start">
+                            <div class="col-12 text-center col-lg-3 align-self-start text-lg-left">
                                 <h3 class="text-uppercase">courses</h3>
                                 <ul class="list-group list-unstyled">
                                     <li v-for="link in footerLinks" class="courses">
-                                        <span class="far fa-arrow-alt-circle-right icon-green"></span>
+                                        <span class="far fa-arrow-alt-circle-right icon-green d-none d-lg-inline"></span>
                                         <a href="#">{{ link }}</a>
                                     </li>
                                 </ul>
+                            </div>
+                            <div class="col-12 d-md-none">
+                                <img src="img/labels.png" class="img-fluid" alt="">
                             </div>
                             <div class="col-lg-3 text-center">
                                 <button class="btn-green" @mouseenter="footerButton = 'learn more'" @mouseleave="footerButton = 'book now'">{{ footerButton }}</button>
@@ -417,14 +429,14 @@
                     <!-- credits -->
                     <div class="container">
                         <div class="row">
-                            <div class="col-lg-10">
+                            <div class="col-12 text-center col-lg-9">
                                 <p>© Copyright 2012 - 2020 | Avada Theme by
                                     <a class="external-ref" href="#">ThemeFusion</a>
                                     | All Rights Reserved | Powered by
                                     <a class="external-ref" href="#">WordPress</a>
                                 </p>
                             </div>
-                            <div class="col-lg-2">
+                            <div class="col-12 text-center col-lg-3 text-lg-right">
                                 <div class="social">
                                     <a href="#"><span class="fab fa-facebook-f"></span></a>
                                     <a href="#"><span class="fab fa-twitter"></span></a>
@@ -461,7 +473,7 @@
                 </div>
             </div>
 
-            <div @click="scrollToTopClicked()" class="scroll-top" :class="scrollToTop ? 'active' : ''">
+            <div @click="scrollToTopClicked()" class="scroll-top d-none d-lg-block" :class="scrollToTop ? 'active' : ''">
                 <button><span class="fas fa-angle-up"></span></button>
             </div>
         </div>

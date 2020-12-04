@@ -78,7 +78,7 @@ body {
 /* contacts */
 .contacts {
     background-color: var(--tundora);
-    height: 44px;
+    min-height: 44px;
     color: var(--athensgray);
     font-size: 12px;
 }
@@ -115,8 +115,77 @@ header .row.active {
     background-color: var(--tundora);
 }
 
+header .hamburger {
+    cursor: pointer;
+    display: flex;
+    justify-content: flex-end;
+}
+
+
+header .hamburger div:hover > span {
+    border-color: var(--bayleaf);
+    transition: all .3s ease;
+}
+
+header .hamburger span {
+    display: block;
+    width: 30px;
+    padding-bottom: 6px;
+    border-bottom: 1px solid var(--white);
+}
+
+header .hamburger span:first-of-type {
+    border-bottom: 3px solid var(--white);
+}
+
+header .hamburger span:nth-of-type(2) {
+    border-bottom: 2px solid var(--white);
+}
+
+header .header-links-container {
+    display: none;
+}
+
+header .header-links-container.active {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    background-color: rgba(4, 11, 17, 0.95);
+}
+
+header .hamburger.active span {
+    border-bottom: 2px solid var(--white);
+    padding-bottom: 7px;
+}
+
+header .hamburger.active span:first-of-type {
+    transform: rotateZ(45deg) translate(20%, 50%)
+}
+
+header .hamburger.active span:last-of-type {
+    transform: rotateZ(-45deg) translate(12%, -105%);
+}
+
+header .hamburger.active span:nth-child(2) {
+    border-bottom: 1px solid transparent;
+}
+
+header .hamburger.active div  {
+    position: fixed;
+    top: 100px;
+}
+
 header ul {
     margin: 0;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    height: 50%;
 }
 
 header ul li {
@@ -223,7 +292,7 @@ header a:hover span {
 /* extras */
 .extras {
     position: fixed;
-    top: 150px;
+    top: 170px;
     right: 15px;
     z-index: 2;
 }
@@ -328,7 +397,8 @@ header a:hover span {
     background-color: var(--white);
     box-shadow: rgba(71, 71, 71, 0.1) 0px 25px 20px 0px; /* tundora with 10% opacity */
     position: relative;
-    top: -110px;
+    top: 20px;
+    margin-bottom: 80px;
 }
 
 .contacts-collections .contact-form h3 {
@@ -440,17 +510,16 @@ section.call-to-action span:first-of-type {
     background-image: url('img/promise-background.jpg');
     background-position: bottom;
     background-size: cover;
-    padding: 80px 50px;
+    padding: 80px 0;
 }
 
 .service-offers .courses {
     box-shadow: rgba(71, 71, 71, 0.1) 0px 25px 20px 0px; /* tundora with 10% opacity */
     padding: 50px 30px;
-    margin: 0 10px;
+    margin: 0 10px 30px;
     border-radius: 10px;
     background-color: var(--white);
     position: relative;
-    bottom: 110px;
     overflow: hidden;
 }
 
@@ -506,6 +575,11 @@ section.call-to-action span:first-of-type {
     margin: 15px 0;
 }
 
+.service-offers .row.services div div {
+    max-width: 450px;
+    margin: auto;
+}
+
 /* pad section */
 .pad-section {
     background-color: #e4e9ed;
@@ -545,6 +619,10 @@ section.call-to-action span:first-of-type {
     top: 6px;
 }
 
+.social-proof > div > div > div:nth-child(2) > div {
+    margin: 50px 0;
+}
+
 .social-proof .card span {
     display: block;
     position: absolute;
@@ -565,9 +643,9 @@ section.call-to-action span:first-of-type {
 
 /* instructors */
 .instructors {
-    margin-bottom: 50px;
     position: relative;
-    padding-bottom: 350px;
+    margin-bottom: 0;
+    padding-bottom: 100px;
     z-index: 1;
 }
 
@@ -644,8 +722,12 @@ section.call-to-action span:first-of-type {
     height: 100%;
     border: none;
     position: relative;
-    top: 6px;
+    top: 0;
     padding: 40px;
+}
+
+.instructors > div.container-lg > div > div:nth-child(2) > div {
+    margin: 50px 0;
 }
 
 .instructors .container:last-of-type {
@@ -806,11 +888,11 @@ section.call-to-action span:first-of-type {
 }
 
 .latest_news .section_cards > div:first-of-type .card-news {
-    padding-left: 40px;
+    padding: 0 40px;
 }
 
 .latest_news .section_cards > div:last-of-type .card-news {
-    padding-right: 40px;
+    padding: 40px;
 }
 
 .latest_news .cta-section {
@@ -891,9 +973,13 @@ section.call-to-action span:first-of-type {
     color: rgba(229, 232, 235, 0.4); /* athens gray with 40% opacity */
 }
 
-.contacts-details img {
-    max-width: 80%;
+.contacts-details img.logo {
+    max-width: 50%;
     margin-bottom: 20px;
+}
+
+.contacts-details > div > div > div.col-12.d-md-none > img {
+    margin-top: 20px;
 }
 
 .contacts-details h3 {
@@ -905,7 +991,7 @@ section.call-to-action span:first-of-type {
 .contacts-details ul li {
     color: rgba(229, 232, 235, 0.4); /* athens gray with 40% opacity */
     font-size: 13px;
-    margin: 10px 0;
+    margin: 5px 0;
 }
 
 .contacts-details span {
@@ -915,8 +1001,8 @@ section.call-to-action span:first-of-type {
 }
 
 .contacts-details a {
-    font-size: 17px;
-    font-weight: 400;
+    font-size: 16px;
+    font-weight: 500;
     color: var(--bayleaf);
     transition: all .2s ease;
 }
@@ -926,7 +1012,7 @@ section.call-to-action span:first-of-type {
 }
 
 .contacts-details li.courses {
-    margin: 5px 0;
+    margin: 2px 0;
 }
 
 .contacts-details a:hover {
@@ -940,12 +1026,17 @@ section.call-to-action span:first-of-type {
     padding: 10px 20px;
     border: 2px solid transparent;
     border-radius: 22px;
+    margin-top: 30px;
 }
 
 .contacts-details button:hover {
     background-color: transparent;
     border: 2px solid var(--bayleaf);
     color: var(--bayleaf);
+}
+
+.contacts-details div div div:nth-child(2) {
+    padding: 30px 0;
 }
 
 .credits {
@@ -975,4 +1066,91 @@ section.call-to-action span:first-of-type {
 .credits p {
     margin: 0;
     line-height: 24px;
+}
+
+.credits .social {
+    margin-top: 15px;
+}
+
+@media screen and (min-width: 960px) {
+    /* header */
+    header ul {
+        height: unset;
+        flex-direction: row;
+    }
+
+    /* contact colection */
+    .contacts-collections .contact-form > div {
+        top: -110px;
+        margin-bottom: 0;
+    }
+
+    /* service offers */
+    .service-offers {
+        padding: 80px 50px;
+    }
+
+    .service-offers .courses {
+        margin: 0 10px;
+        bottom: 110px;
+    }
+
+    /* social proof */
+    .social-proof > div > div > div:nth-child(2) > div {
+        margin: 0 10px;
+    }
+
+    /* instructors */
+    .instructors {
+        padding-bottom: 0;
+        margin-bottom: -30px;
+    }
+
+    .instructors .instructor {
+        top: 6px;
+    }
+
+    .instructors > div.container-lg > div > div:nth-child(2) > div {
+        margin: 0 10px;
+    }
+
+    /* latest_news */
+    .latest_news .section_cards > div:first-of-type .card-news {
+        padding-right: 0;
+    }
+
+    .latest_news .section_cards > div:last-of-type .card-news {
+        padding: 0 40px 0 0;
+    }
+
+    /* contact details */
+    .contacts-details div div div:nth-child(2) {
+        padding: 0;
+    }
+
+    .contacts-details ul li {
+        margin: 10px 0;
+    }
+
+    .contacts-details img.logo {
+        max-width: 80%;
+    }
+
+    .contacts-details li.courses {
+        margin: 5px 0;
+    }
+
+    .contacts-details a {
+        font-size: 17px;
+        font-weight: 400;
+    }
+
+    .contacts-details button {
+        margin: 0;
+    }
+
+    /* social */
+    .credits .social {
+        margin-top: 0;
+    }
 }
